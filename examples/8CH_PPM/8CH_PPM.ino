@@ -1,3 +1,12 @@
+/*
+ *  Author:     Colin MacKenzie / guru-florida
+ *  Version:    1.0.0
+ *  Licence:    LGPL-3.0 (GNU Lesser General Public License version 3)
+ *  
+ *  Description:  Example using the PPM library to acquire the values and plot them
+ *  Use: To display the data, open the Arduino Serial Plotter
+ */
+ 
 #include "ppm.h"
 
 // PPM channel layout (update for your situation)
@@ -15,14 +24,10 @@ const long interval = 50;
 
 void setup()
 {
-  // Buffer between USB & ATmega for LSS-2IO
-  pinMode(7, OUTPUT); 
-  digitalWrite(7, LOW);
-  
   Serial.begin(115200);
 
   // Start the PPM function
-  ppm.begin(A3, false);
+  ppm.begin(A0, false);
 }
 
 void loop()
