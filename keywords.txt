@@ -1,7 +1,15 @@
-deadband	KEYWORD1
-channel_read_throttle	KEYWORD1
-channel_read_reversable_throttle	KEYWORD1
-channel_read_midstick	KEYWORD1
-channel_read_switch	KEYWORD1
-clamp	KEYWORD1
-ppm_start	KEYWORD1
+##########################################
+# Syntax Coloring Map For PPM
+##########################################
+
+##########################################
+# Methods and Functions (KEYWORD1)
+##########################################
+
+deadband                          KEYWORD1
+channel_read_throttle             KEYWORD1
+channel_read_reversable_throttle  KEYWORD1
+channel_read_midstick             KEYWORD1
+channel_read_switch               KEYWORD1
+clamp                             KEYWORD1
+ppm_start                         KEYWORD1
