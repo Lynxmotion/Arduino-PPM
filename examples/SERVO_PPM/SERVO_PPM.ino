@@ -37,7 +37,7 @@ void setup()
   // Start the PPM function on PIN A0
   ppm.begin(A0, false);
 
-  // attaches the servo on pin 9 to the servo object
+  // attaches the servo on pins to the servo objects
   servo_1.attach(3);
   servo_2.attach(5); 
   servo_3.attach(6); 
