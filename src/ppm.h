@@ -1,3 +1,9 @@
+/*
+ *  Author:     Colin MacKenzie / guru-florida
+ *  Version:    1.0.0
+ *  Licence:    LGPL-3.0 (GNU Lesser General Public License version 3)
+ */
+
 #pragma once
 
 // up to 16 channels of PPM, but true number will be auto-detected
