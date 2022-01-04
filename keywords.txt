@@ -2,14 +2,20 @@
 # Syntax Coloring Map For PPM
 ##########################################
 
-##########################################
-# Methods and Functions (KEYWORD1)
-##########################################
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
 
-deadband                          KEYWORD1
-channel_read_throttle             KEYWORD1
-channel_read_reversable_throttle  KEYWORD1
-channel_read_midstick             KEYWORD1
-channel_read_switch               KEYWORD1
-clamp                             KEYWORD1
-ppm_start                         KEYWORD1
+ppm	KEYWORD1
+clamp	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+deadband	KEYWORD2
+read_channel	KEYWORD2
+read_throttle	KEYWORD2
+read_reversable_throttle	KEYWORD2
+read_midstick	KEYWORD2
+read_switch	KEYWORD2
