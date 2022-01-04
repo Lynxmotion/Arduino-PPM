@@ -6,7 +6,8 @@
  *  Description:  Example using the PPM library to acquire the values and plot them
  *  Use: To display the data, open the Arduino Serial Plotter
  */
- 
+
+// Include the PPM library
 #include "ppm.h"
 
 // PPM channel layout (update for your situation)
@@ -19,14 +20,16 @@
 #define SWITCH3WAY_2    7     // trim-pot for left/right motor mix  (face trim)
 #define POT             8     // trim-pot on the (front left edge trim)
 
-unsigned long previousMillis = 0;
+// Loop interval time
 const long interval = 50;
+unsigned long previousMillis = 0;
 
 void setup()
 {
+  // Start the serial port to display data 
   Serial.begin(115200);
 
-  // Start the PPM function
+  // Start the PPM function on PIN A0
   ppm.begin(A0, false);
 }
 
