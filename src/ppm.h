@@ -1,9 +1,10 @@
 /*
- *	Author:			Colin F. MacKenzie <nospam2@colinmackenzie.net>
- *	Version:		1.0.1
- *	Licence:		LGPL-3.0 (GNU Lesser General Public License version 3)
- *	
- *	Desscription:	Simple way to use a PPM Radio Controlled Receiver
+ *  Author:       Colin F. MacKenzie <nospam2@colinmackenzie.net>
+ *  maintainers:  Eric Nantel
+ *  Version:      1.0.1
+ *  Licence:      LGPL-3.0 (GNU Lesser General Public License version 3)
+ *  
+ *  Desscription: Simple way to use a PPM Radio Controlled Receiver
  */
 
 #pragma once
