@@ -33,9 +33,6 @@
 // Include the PPM library
 #include "ppm.h"
 
-// Include the LSS library
-#include <LSS.h>
-
 // PPM channel layout (update for your situation)
 #define THROTTLE    3
 #define RUDDER      4
@@ -55,21 +52,8 @@ const int INPUT_DEADBAND = 10;
 const long interval = 10;
 unsigned long previousMillis = 0;
 
-#define LSS_BAUD  (LSS_DefaultBaud)
-// Choose the proper serial port for your platform
-
-#define LSS_SERIAL  (Serial)  // ex: Many Arduino boards
-//#define LSS_SERIAL  (Serial1) // ex: Teensy
-
-// Create the LSS objects and assign them IDs
-LSS myLSS_1 = LSS(1);
-LSS myLSS_2 = LSS(2);
-LSS myLSS_3 = LSS(3);
-LSS myLSS_4 = LSS(4);
-
 void setup() {
-  // Initialize the LSS bus
-  LSS::initBus(LSS_SERIAL, LSS_BAUD);
+  Serial.begin(115200);
 
   Serial.write("#254RESET\r");   
   delay(2000);  // wait 2 sec for reboot
@@ -96,17 +80,21 @@ void loop() {
 // Updating all the PPM values to each channel Variable
 void PPMupdate()
 { 
-  throttle    =   map(ppm.read_midstick(THROTTLE, INPUT_DEADBAND), -500, 500, -900, 900);
-  roll        =   map(ppm.read_midstick(ROLL, INPUT_DEADBAND), -500, 500, -900, 900);
-  pitch       =   map(ppm.read_midstick(PITCH, INPUT_DEADBAND), -500, 500, -900, 900);
-  rudder      =   map(ppm.read_midstick(RUDDER, INPUT_DEADBAND), -500, 500, -900, 900);
+  throttle    =   constrain(map(ppm.read_midstick(THROTTLE, INPUT_DEADBAND), -500, 500, -900, 900), -900, 900);
+  roll        =   constrain(map(ppm.read_midstick(ROLL, INPUT_DEADBAND), -500, 500, -900, 900), -900, 900);
+  pitch       =   constrain(map(ppm.read_midstick(PITCH, INPUT_DEADBAND), -500, 500, -900, 900), -900, 900);
+  rudder      =   constrain(map(ppm.read_midstick(RUDDER, INPUT_DEADBAND), -500, 500, -900, 900), -900, 900);
 }
 
 // Updating the positions of each LSS's
 void LSSupdate()
 { 
-  myLSS_1.move(throttle);
-  myLSS_2.move(roll);
-  myLSS_3.move(pitch);
-  myLSS_4.move(rudder);
+  Serial.print("#1D");
+  Serial.println(throttle);
+  Serial.print("#2D");
+  Serial.println(roll);
+  Serial.print("#3D");
+  Serial.println(pitch);
+  Serial.print("#4D");
+  Serial.println(rudder);
 }
