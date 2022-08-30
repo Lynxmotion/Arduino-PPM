@@ -63,6 +63,7 @@ void loop() {
   // Interval at which the PPM & LSS Output are updated
   unsigned long currentMillis = millis();
   if (currentMillis - previousMillis >= interval) {
+    previousMillis = currentMillis;
     PPMupdate();
     LSSupdate();
   }
